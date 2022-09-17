@@ -19,6 +19,8 @@
 
     $loginPass = $conn -> query('SELECT TOP(1)* FROM [dbo].[loginData]');
     $loginPass -> setfetchmode(PDO::FETCH_ASSOC);
-    //echo "Hello World!";
+    
+    echo "Hello World! \n";
+    echo "$conn";
 
 ?>
