@@ -1,5 +1,5 @@
 <?php  
-    echo "Hello World!";
+    print("Hello World!");
     
     //SQL Server Extension Sample Code:
     $connectionInfo = array("UID" => "konnectVR", "pwd" => "TZeu4kAmTK2BWPS", "Database" => "konnectVR-Data", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
