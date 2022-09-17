@@ -31,6 +31,6 @@
     }
     else
     {echo "Sucessful connection, but failed login";}
-    echo "Hello World!";
+    //echo "Hello World!";
 
 ?>
