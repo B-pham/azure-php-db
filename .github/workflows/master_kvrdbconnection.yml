@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'KVRdbConnection'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6708829735204D4D8953BED965B7EFC9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3B22639A1EA24ED39FE01DD17FDE3AE6 }}
           package: .
