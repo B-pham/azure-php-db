@@ -21,6 +21,6 @@
     $loginPass -> setfetchmode(PDO::FETCH_ASSOC);
     
     echo "Hello World! \n";
-    echo "$conn";
+    //echo "$conn";
 
 ?>
