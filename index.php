@@ -17,20 +17,8 @@
     $loginUser = $_POST["LoginUser"];
     $loginPass = $_POST["LoginPass"];
 
-    $sql = "SELECT Password FROM loginData Where Username = '". $loginUser . "'";
-
-    $result = $conn->query($sql);
-
-    if($result -> num_rows > 0)
-    {
-        while($row = $result->fetch_assoc())
-        {
-            if($row["Password"] == $loginPass)
-            {echo "Sucessful Login and Connection!!";}
-        }
-    }
-    else
-    {echo "Sucessful connection, but failed login";}
+    $loginPass = $conn -> query('SELECT TOP(1)* FROM [dbo].[loginData]');
+    $loginPass -> setfetchmode(PDO::FETCH_ASSOC);
     //echo "Hello World!";
 
 ?>
