@@ -12,8 +12,8 @@
         die(print_r($e));
     }
 
-    $loginUser -> username = 'Bill';
-    $loginPass -> Password = '123qwe';
+    $loginUser = 'Bill';
+    $loginPass = '123qwe';
 
     /*try {
         $loginResult = $conn -> query('SELECT password FROM loginData WHERE username = '. $loginUser .'');
