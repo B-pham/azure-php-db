@@ -14,6 +14,23 @@
     $serverName = "tcp:konnectvr-db.database.windows.net,1433";
     $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+    $loginUser = $_POST["LoginUser"];
+    $loginPass = $_POST["LoginPass"];
+
+    $sql = "SELECT Password FROM loginData Where Username = '". $loginUser . "'";
+
+    $result = $conn->query($sql);
+
+    if($result -> num_rows > 0)
+    {
+        while($row = $result->fetch_assoc())
+        {
+            if($row["Password"] == $loginPass)
+            {echo "Sucessful Login and Connection!!";}
+        }
+    }
+    else
+    {echo "Sucessful connection, but failed login";}
     echo "Hello World!";
-    echo "$e";
+
 ?>
