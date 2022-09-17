@@ -11,14 +11,20 @@
         die(print_r($e));
     }
 
-    
-    
-    
-    //$loginUser = $_POST["LoginUser"];
-    //$loginPass = $_POST["LoginPass"];
+    $loginUser -> username = 'Bill';
+    $loginPass -> Password = '123qwe';
 
-    //$loginPass = $conn -> query('SELECT TOP(1)* FROM [dbo].[loginData]');
-    //$loginPass -> setfetchmode(PDO::FETCH_ASSOC);
-
+    try {
+        $loginResult = $conn -> query('SELECT password FROM loginData WHERE username = '. $loginUser .'');
+        $loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if($loginPass -> password = $loginResult){
+            echo "Password is correct!";
+        }
+    
+    }
+    catch(PDOException $e){
+        print("Error finding username in database.");
+        die(print_r($e));
+    }
 
 ?>
