@@ -14,7 +14,7 @@
     //$serverName = "tcp:konnectvr-db.database.windows.net,1433";
     //$conn = sqlsrv_connect($serverName, $connectionInfo);
     
-    echo "Hello World! \n";
+    echo "Hello World!";
     
     //$loginUser = $_POST["LoginUser"];
     //$loginPass = $_POST["LoginPass"];
