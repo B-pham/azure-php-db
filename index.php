@@ -41,6 +41,6 @@
         }
     }
     else
-    {echo "Sucessful connection, but failed login";}
+    {echo "Sucessful connection, but failed login.";}
 
 ?>
