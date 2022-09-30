@@ -15,10 +15,12 @@
     $loginUser = $_POST["LoginUser"];
     $loginPass = $_POST["LoginPass"];
 
-    /*try {
-        $loginResult = $conn -> query('SELECT password FROM loginData WHERE username = '. $loginUser .'');
-        $loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        if($loginPass -> password = $loginResult){
+    try {
+        $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
+        $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
+        $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
+        //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if($loginPass == $loginResult['password']){//Check array against entered info
             print("Password is correct!");
         }
     
@@ -26,9 +28,9 @@
     catch(PDOException $e){
         print("Error finding username in database.");
         die(print_r($e));
-    }*/
+    }
 
-    $sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
+    /*$sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
 
     $result = $conn->query($sql);
 
@@ -41,6 +43,6 @@
         }
     }
     else
-    {echo "Sucessful connection, but failed login.";}
+    {echo "Sucessful connection, but failed login.";}*/
 
 ?>
