@@ -13,13 +13,13 @@
         die(print_r($e));
     }
 
-    $loginUser = $_POST["LoginUser"];
-    $loginPass = $_POST["LoginPass"];
+    //$loginUser = $_POST["LoginUser"];
+    //$loginPass = $_POST["LoginPass"];
     $username = $_POST["usernamePost"];
     $password = $_POST["passwordPost"];
     $accessCode = $_POST["accessCodePost"];
 
-    try {
+    /*try {
         $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
         $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
@@ -32,13 +32,16 @@
     catch(PDOException $e){
         print("Error finding username in database.");
         die(print_r($e));
-    }
+    }*/
 
     
-    $sql2 = "INSERT INTO loginData (username, password, accessCode)
+    $sql = "INSERT INTO loginData (username, password, accessCode)
         Values('".$username."', '".$password."', '".$accessCode."')";
-    $result = PDO($conn, $sql2);
-    print("Account Created!". "<br>");
+    if($conn->query($sql) === TRUE){
+        echo "Account Created!";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 
 
     
