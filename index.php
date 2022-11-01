@@ -15,7 +15,12 @@
     $loginUser = $_POST["LoginUser"];
     $loginPass = $_POST["LoginPass"];
 
-    try {
+    $iD = "3"
+    $username = "Justin";
+    $password = "1234abc";
+    $accessCode = "1993";
+
+    /*try {
         $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
         $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
@@ -28,7 +33,15 @@
     catch(PDOException $e){
         print("Error finding username in database.");
         die(print_r($e));
-    }
+    }*/
+
+    $sql = "INSERT INTO loginData (iD, username, password, accessCode)
+        Values ('".$iD."', '".$username."', '".$password."', '".$accessCode."')";
+    $result = mysqli_query($conn, $sql);
+
+    if(!result) echo "Error";
+    else echo "Works great!";
+
 
     /*$sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
 
