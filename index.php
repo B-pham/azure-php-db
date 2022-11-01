@@ -15,10 +15,11 @@
     $loginUser = $_POST["LoginUser"];
     $loginPass = $_POST["LoginPass"];
 
-    $iD = "3"
+    /*D = "3"
     $username = "Justin";
     $password = "1234abc";
     $accessCode = "1993";
+    */
 
     try {
         $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
