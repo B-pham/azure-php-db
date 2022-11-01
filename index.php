@@ -1,5 +1,7 @@
 <?php  
-    print("Hello Worlds!");
+    print("Hello World!");
+    print("\n");
+    print("<br>");
     
     // PHP Data Objects(PDO) Sample Code:
     try {
