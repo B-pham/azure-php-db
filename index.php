@@ -34,7 +34,7 @@
         die(print_r($e));
     }
 
-    /*try {
+    try {
         $sql = "INSERT INTO loginData (username, password, accessCode)
             Values('".$username."', '".$password."', '".$accessCode."')";
         $result = mysqli_query($conn, $sql);
@@ -43,7 +43,7 @@
     catch(PDOException $e){
         print("Error finding username in database.");
         die(print_r($e));
-    }/*
+    }
 
     
 
