@@ -38,6 +38,7 @@
         $sql = "INSERT INTO loginData (username, password, accessCode)
             Values('".$username."', '".$password."', '".$accessCode."')";
         $result = mysqli_query($conn, $sql);
+        print("Account Created!". "<br>");
     }
 
     catch(PDOException $e){
