@@ -37,11 +37,7 @@
     
     $sql = "INSERT INTO loginData (username, password, accessCode)
         Values('".$username."', '".$password."', '".$accessCode."')";
-    if($conn->query($sql) === TRUE){
-        echo "Account Created!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    $result = mysqli_query($conn, $sql);
 
 
     
