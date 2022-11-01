@@ -34,11 +34,20 @@
         die(print_r($e));
     }*/
 
-    
-    $sql = "INSERT INTO loginData (username, password, accessCode)
-        Values('".$username."', '".$password."', '".$accessCode."')";
-    $result = mysqli_query($conn, $sql);
+    try {
+        $sql = "INSERT INTO loginData (username, password, accessCode)
+            Values('".$username."', '".$password."', '".$accessCode."')";
+        if($conn->query($sql) === TRUE){
+            echo "Account Created!";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
 
+    catch(PDOException $e){
+        print("Error adding user in database.");
+        die(print_r($e));
+    }
 
     
 
