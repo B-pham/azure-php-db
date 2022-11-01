@@ -9,7 +9,6 @@
     }
     catch (PDOException $e) {
         print("Error connecting to SQL Server.");
-        print("Hello, This is Test")
         die(print_r($e));
     }
 
