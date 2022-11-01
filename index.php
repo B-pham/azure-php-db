@@ -15,9 +15,9 @@
 
     //$loginUser = $_POST["LoginUser"];
     //$loginPass = $_POST["LoginPass"];
-    $username = $_POST["usernamePost"];
-    $password = $_POST["passwordPost"];
-    $accessCode = $_POST["accessCodePost"];
+    $username = "Justinnnn";
+    $password = "password1234";
+    $accessCode = "1234";
 
     /*try {
         $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
