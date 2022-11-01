@@ -1,11 +1,11 @@
 <?php  
-    print("Hello World!". "<\n");
+    print("Hello World!". "\n");
     
     // PHP Data Objects(PDO) Sample Code:
     try {
         $conn = new PDO("sqlsrv:server = tcp:konnectvr-db.database.windows.net,1433; Database = konnectVR-Data", "konnectVR", "TZeu4kAmTK2BWPS");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        print("connected to the server!". "<\n");
+        print("connected to the server!". "\n");
     }
     catch (PDOException $e) {
         print("Error connecting to SQL Server.");
@@ -21,7 +21,7 @@
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         if($loginPass == $loginResult['password']){//Check array against entered info
-            print("Password is correct!". "<\n");
+            print("Password is correct!". "\n");
         }
     
     }
