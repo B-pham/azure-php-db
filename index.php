@@ -1,5 +1,28 @@
 <?php  
-    print("Hello World!". "<br>");
+
+    $servername = "konnectvr-db.database.windows.net,1433";
+    $server_username = "konnectVR";
+    $server_password = "TZeu4kAmTK2BWPS";
+    $dbName = "konnectVR-Data";
+
+    $username = $_POST["usernamePost"];
+    $password = $_POST["passwordPost"];
+    $accessCode = $_POST["accessCodePost"];
+
+    $conn = new mysqli($servername, $server_username, $server_password, $dbName);
+
+    if(!$conn){
+        die ("Connection Failed". mysqli_connect_error());
+    }
+
+    $sql = "INSERT INTO loginData (username, password, accessCode)
+        Values('".$username."', '".$password."', '".$accessCode."')";
+    $result = mysqli_query($conn, $sql);
+    
+
+
+
+    /*print("Hello World!". "<br>");
     
     // PHP Data Objects(PDO) Sample Code:
     try {
@@ -15,13 +38,13 @@
     $loginUser = $_POST["LoginUser"];
     $loginPass = $_POST["LoginPass"];
 
-    /*D = "3"
+    /*iD = "3"
     $username = "Justin";
     $password = "1234abc";
     $accessCode = "1993";
     */
 
-    try {
+    /*try {
         $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
         $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
@@ -35,6 +58,7 @@
         print("Error finding username in database.");
         die(print_r($e));
     }
+    */
 
    /*sql = "INSERT INTO loginData (iD, username, password, accessCode)
         Values ('".$iD."', '".$username."', '".$password."', '".$accessCode."')";
