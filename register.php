@@ -13,10 +13,10 @@
         die(print_r($e));
     }
 
-    $ID = "5";
-    $username = "Justinnnn";
-    $password = "password1234";
-    $accessCode = "1234";
+    $ID = "6";
+    $username = "Testeing";
+    $password = "newpassword";
+    $accessCode = "2212";
 
     /*try {
         $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
