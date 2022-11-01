@@ -22,9 +22,8 @@
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         if($loginPass == $loginResult['password']){//Check array against entered info
             print("Password is correct!". "<br>");
-        }
-    
     }
+
     catch(PDOException $e){
         print("Error finding username in database.");
         die(print_r($e));
