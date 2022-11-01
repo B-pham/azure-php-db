@@ -13,8 +13,7 @@
         die(print_r($e));
     }
 
-    //$loginUser = $_POST["LoginUser"];
-    //$loginPass = $_POST["LoginPass"];
+    $ID = "5";
     $username = "Justinnnn";
     $password = "password1234";
     $accessCode = "1234";
@@ -35,8 +34,8 @@
     }*/
 
     try {
-        $sql = "INSERT INTO loginData (username, password, accessCode)
-            Values('".$username."', '".$password."', '".$accessCode."')";
+        $sql = "INSERT INTO loginData (ID, username, password, accessCode)
+            Values('".$ID."', '".$username."', '".$password."', '".$accessCode."')";
         if($conn->query($sql) === TRUE){
             echo "Account Created!";
         } else {
@@ -48,31 +47,4 @@
         print("Error adding user in database.");
         die(print_r($e));
     }
-
-    
-
-   /*sql = "INSERT INTO loginData (iD, username, password, accessCode)
-        Values ('".$iD."', '".$username."', '".$password."', '".$accessCode."')";
-    $result = mysqli_query($conn, $sql);
-
-    if(!result) echo "Error";
-    else echo "Works great!";
-    */
-
-
-    /*$sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
-
-    $result = $conn->query($sql);
-
-    if($result -> num_rows > 0)
-    {
-        while($row = $result->fetch_assoc())
-        {
-            if($row["Password"] == $loginPass)
-            {echo "Sucessful Login and Connection!!";}
-        }
-    }
-    else
-    {echo "Sucessful connection, but failed login.";}*/
-
 ?>
