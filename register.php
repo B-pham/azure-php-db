@@ -19,8 +19,8 @@
     try {
         $sql = "INSERT INTO loginData (email, password, accessCode)
             Values('".$email."', '".$password."', '".$accessCode."')";
-        $conn->query($sql);
-        echo "Success adding user to database! <br> ";
+        $conn -> query($sql);
+        echo "Success adding user to database!" .  "<br>";
         echo "SQL Query: " . $sql . "<br>";
     }
 

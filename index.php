@@ -20,6 +20,8 @@
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         if($password == $loginResult['password']){//Check array against entered info
             print("Password is correct!". "<br>");
+        } else {
+            print("Password is incorrect!". "<br>");
         }
     
     }
