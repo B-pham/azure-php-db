@@ -13,14 +13,13 @@
         die(print_r($e));
     }
 
-    $ID = "9";
     $username = "NewTest";
     $password = "Samepassword";
     $accessCode = "3322";
 
     try {
-        $sql = "INSERT INTO loginData (ID, username, password, accessCode)
-            Values('".$ID."', '".$username."', '".$password."', '".$accessCode."')";
+        $sql = "INSERT INTO loginData (username, password, accessCode)
+            Values('".$username."', '".$password."', '".$accessCode."')";
         if($conn->query($sql) === TRUE){
             echo "Account Created!";
         } else {
