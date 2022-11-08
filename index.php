@@ -14,20 +14,18 @@
     $password = $_POST["passwordPost"];
 
     try {
-        $sql = "SELECT password FROM loginData WHERE email = '". $email ."'";
+        $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
         $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        if($email != $loginResult['email']){
-            print("Error finding username in database");
-        } else if($password == $loginResult['password']){//Check array against entered info
+        if($password == $loginResult['password']){//Check array against entered info
             print("Password is correct!". "<br>");
         } else {
             print("Password is incorrect!". "<br>");
         }
-    
     }
+
     catch(PDOException $e){
         print("Error finding username in database.");
         die(print_r($e));
