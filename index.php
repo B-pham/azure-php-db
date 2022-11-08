@@ -12,7 +12,6 @@
 
     $email = $_POST["emailPost"];
     $password = $_POST["passwordPost"];
-    $accessCode = $_POST["accessCodePost"];
 
     try {
         $sql = "SELECT password FROM loginData WHERE email = '". $email ."'";
