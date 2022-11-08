@@ -13,13 +13,13 @@
         die(print_r($e));
     }
 
-    $username = $_POST["usernamePost"];
+    $email = $_POST["emailPost"];
     $password = $_POST["passwordPost"];
     $accessCode = $_POST["accessCodePost"];
 
     try {
-        $sql = "INSERT INTO loginData (username, password, accessCode)
-            Values('".$username."', '".$password."', '".$accessCode."')";
+        $sql = "INSERT INTO loginData (email, password, accessCode)
+            Values('".$email."', '".$password."', '".$accessCode."')";
         if($conn->query($sql) === TRUE){
             echo "Account Created!";
         } else {
