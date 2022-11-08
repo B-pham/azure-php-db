@@ -27,6 +27,5 @@
     catch(PDOException $e){
         print("Error adding user to database.");
         die(print_r($e));
-        echo $conn->error;
     }
 ?>
