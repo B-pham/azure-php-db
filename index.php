@@ -1,6 +1,4 @@
 <?php  
-    print("Hello World!". "<br>");
-    
     // PHP Data Objects(PDO) Sample Code:
     try {
         $conn = new PDO("sqlsrv:server = tcp:konnectvr-db.database.windows.net,1433; Database = konnectVR-Data", "konnectVR", "TZeu4kAmTK2BWPS");
@@ -12,15 +10,16 @@
         die(print_r($e));
     }
 
-    $loginUser = $_POST["LoginUser"];
-    $loginPass = $_POST["LoginPass"];
+    $email = $_POST["emailPost"];
+    $password = $_POST["passwordPost"];
+    $accessCode = $_POST["accessCodePost"];
 
     try {
-        $sql = "SELECT password FROM loginData WHERE username = '". $loginUser ."'";
+        $sql = "SELECT password FROM loginData WHERE email = '". $email ."'";
         $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        if($loginPass == $loginResult['password']){//Check array against entered info
+        if($password == $loginResult['password']){//Check array against entered info
             print("Password is correct!". "<br>");
         }
     
