@@ -19,8 +19,9 @@
     try {
         $sql = "INSERT INTO loginData (email, password, accessCode)
             Values('".$email."', '".$password."', '".$accessCode."')";
-        echo "Account Created in database!";
-        echo "SQL Command: " . $sql . "<br>";
+        $conn->query($sql);
+        echo "Account Created!" . "<br>";
+        echo $sql . "<br>"
     }
 
     catch(PDOException $e){
