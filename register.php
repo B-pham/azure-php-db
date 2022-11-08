@@ -13,9 +13,9 @@
         die(print_r($e));
     }
 
-    $username = "NewTest";
-    $password = "Samepassword";
-    $accessCode = "3322";
+    $username = $_POST["usernamePost"];
+    $password = $_POST["passwordPost"];
+    $accessCode = $_POST["accessCodePost"];
 
     try {
         $sql = "INSERT INTO loginData (username, password, accessCode)
