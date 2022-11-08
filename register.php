@@ -20,8 +20,8 @@
         $sql = "INSERT INTO loginData (email, password, accessCode)
             Values('".$email."', '".$password."', '".$accessCode."')";
         $conn->query($sql);
-        echo "Account Created!" . "<br>";
-        echo $sql . "<br>"
+        echo "Account Created!";
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
     catch(PDOException $e){
