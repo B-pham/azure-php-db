@@ -22,9 +22,9 @@
         if($email != $loginResult['email']){
             print("Error finding username in database.");
         } else if($password == $loginResult['password']){//Check array against entered info
-            print("Password is correct!". "<br>");
+            print("Password is correct!");
         } else {
-            print("Password is incorrect!". "<br>");
+            print("Password is incorrect!");
         }
     }
 
