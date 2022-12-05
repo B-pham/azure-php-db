@@ -22,6 +22,7 @@
 
         if($email == $loginResult['email']){//Check array against entered info
             print("Password Reset Link has been sent to Email!");
+            print($loginResult['email']);
         }
     }
 
