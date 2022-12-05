@@ -1,4 +1,10 @@
 <?php
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    require 'phpmailer/src/Exception.php';
+    require 'phphmailer/src/PHPMailer.php';
+    require 'phpmailer/src/SMTP.php';
     //Connect to database
     try 
     {
@@ -16,28 +22,48 @@
     $email = $_POST["emailPost"];
     $username = $_POST["userPost"];
 
-    //email vars
-    $subject = 'Test Password recovery email';
-    $headers = 'From: Us <Us@dummygmail.com>\r\n>';
-    $headers .= "Reply-To: replyto@dummygmail.com\r\n";
-    $headers .= "Content-type: text/html\r\n";
-
     try
     {
-        $sql = "SELECT * FROM logintest WHERE email = '". $email ."'";
-        $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
-        $result = $temp -> fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
-
-        if($email != $result['Email'] || $username != $result['Username'])
-        {print("Incorrect username and/or email. Try again   ");}
-        else
+        $temp = $_POST['email'];
+        $to = substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
+        //(Extra characters were consistenly 'a??' for some reason)
+        $subject = "Password Recovery for KVR";
+        if($to != null)
         {
-            $to = $result['Email'];
-            $message = 'Your password is: '.$result['Password'];
-            mail($to, $subject, $message, $headers);
-            print ("Email sent!!!");
+            $mail = new PHPMailer(true);
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';//Server emails are sent from
+            $mail->SMTPAuth = true;
+            $mail->Username = 'dummykvr@gmail.com';//Email address that sends the email
+            $mail->Password = 'uwqmfxcxzxtwhzlq';//App password for the gmail account
+            $mail->SMTPSecure = 'tls';
+            $mail->SMTPOptions = array('ssl' => array(//Needed to connect to server, however this in of itself is a security flaw
+                                                        'verify_peer'=>false,
+                                                        'verify_peer_name'=>false,
+                                                        'allow_self_signed'=>true
+                                                    )
+                                      );
+            $mail->Port = 587;
+            $mail->setFrom('dummykvr@gmail.com');
+            $mail->addAddress($to);
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+
+            $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
+            $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
+            $result = $temp -> fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
+
+            if($email != $result['email'] || $username != $result['Username'])
+            {print("Incorrect username and/or email. Try again   "); print("Database: ". $result['Email']); print("   ".$result['Username']);}
+            else
+            {
+                $to = $result['Email'];
+                $message = 'Your password is: '.$result['Password'];
+                $mail->Body = $message;
+                $mail->send();
+                print ("Email sent!!!");
+            }
         }
-        //print ("Email sent!!!");
     }
 
     catch(PDOException $e)
@@ -57,7 +83,7 @@
         form.AddField("User", username);
         form.AddField("Email", email);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/KonnectVR/ForgotPassword.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/KonnectVR/ForgotPass.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -67,7 +93,7 @@
             }
             else
             {
-                Debug.Log(www.downloadHandler.text);
+                String.text = www.downloadHandler.text;//Assign to public text field so users can see in their HUD
             }
         }
     }*/
