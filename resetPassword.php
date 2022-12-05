@@ -19,8 +19,8 @@
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        if($email == $loginResult['password']){//Check array against entered info
-            print("Password Reset Link has been sent to Email!");
+        if($password == $loginResult['password']){//Check array against entered info
+            print("Password Reset Link has been sent to Email!!!");
         } else {
             print("Error finding Email in database!");
         }
