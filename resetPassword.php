@@ -20,30 +20,14 @@
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
 
-        if($password == $loginResult['password']){//Check array against entered info
-            print("Password is correct!");
-        } else
-            print("Password is incorrect!");
+        if($email == $loginResult['email']){//Check array against entered info
+            print("Password Reset Link has been sent to Email!");
+        }
     }
 
     catch(PDOException $e){
-        print("Error finding username in database.");
+        print("Error finding Email in database.");
         die(print_r($e));
     }
-
-    /*$sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
-
-    $result = $conn->query($sql);
-
-    if($result -> num_rows > 0)
-    {
-        while($row = $result->fetch_assoc())
-        {
-            if($row["Password"] == $loginPass)
-            {echo "Sucessful Login and Connection!!";}
-        }
-    }
-    else
-    {echo "Sucessful connection, but failed login.";}*/
 
 ?>
