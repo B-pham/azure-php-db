@@ -34,8 +34,8 @@
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';//Server emails are sent from
             $mail->SMTPAuth = true;
-            $mail->Username = 'dummykvr@gmail.com';//Email address that sends the email
-            $mail->Password = 'uwqmfxcxzxtwhzlq';//App password for the gmail account
+            $mail->Username = 'dummykvr02@gmail.com';//Email address that sends the email
+            $mail->Password = 'ecqdsgylvdbgyjfu';//App password for the gmail account
             $mail->SMTPSecure = 'tls';
             $mail->SMTPOptions = array('ssl' => array(//Needed to connect to server, however this in of itself is a security flaw
                                                         'verify_peer'=>false,
@@ -44,7 +44,7 @@
                                                     )
                                       );
             $mail->Port = 587;
-            $mail->setFrom('dummykvr@gmail.com');
+            $mail->setFrom('dummykvr02@gmail.com');
             $mail->addAddress($to);
             $mail->isHTML(true);
             $mail->Subject = $subject;
