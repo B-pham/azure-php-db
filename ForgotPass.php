@@ -53,7 +53,7 @@
             $result = $temp -> fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
 
             if($email != $result['email'])
-            {print("Incorrect username and/or email. Try again   "); print("Database: ". $result['Email']); print("   ".$result['Username']);}
+            {print("Incorrect username and/or email. Try again   ");}
             else
             {
                 $to = $result['Email'];
