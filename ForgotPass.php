@@ -20,7 +20,6 @@
     }
 
     $email = $_POST["emailPost"];
-    $username = $_POST["userPost"];
 
     try
     {
@@ -53,7 +52,7 @@
             $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
             $result = $temp -> fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
 
-            if($email != $result['email'] || $username != $result['Username'])
+            if($email != $result['email'])
             {print("Incorrect username and/or email. Try again   "); print("Database: ". $result['Email']); print("   ".$result['Username']);}
             else
             {
