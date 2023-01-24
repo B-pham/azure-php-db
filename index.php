@@ -10,7 +10,7 @@
         die(print_r($e));
     }
 
-    $email = $_POST["emailPost"];
+    $email = "Testing";
     $password = $_POST["passwordPost"];
 
     try {
