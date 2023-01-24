@@ -24,7 +24,7 @@
         } else if($password == $loginResult['password']){//Check array against entered info
             print("Password is correct!");
         } else
-            print("Password is incorrect!");
+            print("Password is incorrect. Please try again with another email or password.");
     }
 
     catch(PDOException $e){
