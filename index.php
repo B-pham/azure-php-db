@@ -25,6 +25,9 @@
             print("Password is correct!");
         } else
             print("Password is incorrect!");
+
+        print($email);
+        print($password);
     }
 
     catch(PDOException $e){
