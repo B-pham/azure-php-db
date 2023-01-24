@@ -20,7 +20,7 @@
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         if($email != $loginResult['email']){
-            print("Could not find email in database. Please try again.");
+            print("Could not find an account for email. Please try again.");
         } else if($password == $loginResult['password']){//Check array against entered info
             print("Password is correct!");
         } else
