@@ -19,14 +19,15 @@
         die(print_r($e));
     }
 
-    $email = $_POST["emailPost"];
+    //$email = $_POST["emailPost"];
 
     try
     {
         $temp = $_POST['email'];
         $to = substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
         //(Extra characters were consistenly 'a??' for some reason)
-        $subject = "Password Recovery for KVR";
+        //$subject = "Password Recovery for KVR";
+        $subject = "Testing email";
         if($to != null)
         {
             $mail = new PHPMailer(true);
@@ -47,8 +48,13 @@
             $mail->addAddress($to);
             $mail->isHTML(true);
             $mail->Subject = $subject;
+            //$to = $result['Email'];
+            $message = "This email came from an azure web application";
+            $mail->Body = $message;
+            $mail->send();
+            print ("Email sent!!!");
 
-            $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
+            /*$sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
             $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
             $result = $temp -> fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
 
@@ -61,7 +67,7 @@
                 $mail->Body = $message;
                 $mail->send();
                 print ("Email sent!!!");
-            }
+            }*/
         }
     }
 
