@@ -19,11 +19,12 @@
         $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
         //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-
-        if($password == $loginResult['password']){//Check array against entered info
+        if($email != $loginResult['email']){
+            print("Could not find an account for email. Please try again.");
+        } else if($password == $loginResult['password']){//Check array against entered info
             print("Password is correct!");
         } else
-            print("Password is incorrect!");
+            print("Password is incorrect. Please try again with another email or password.");
     }
 
     catch(PDOException $e){
