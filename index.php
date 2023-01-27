@@ -1,4 +1,5 @@
-<?php  
+<?php
+    include 'ForgotPass.php';
     // PHP Data Objects(PDO) Sample Code:
     try {
         $conn = new PDO("sqlsrv:server = tcp:konnectvr-db.database.windows.net,1433; Database = konnectVR-Data", "konnectVR", "TZeu4kAmTK2BWPS");
@@ -9,7 +10,8 @@
         print("Error connecting to SQL Server.");
         die(print_r($e));
     }
-
+    if($_POST["email"] == true)
+    {EmailTesting();}
     $email = $_POST["emailPost"];
     $password = $_POST["passwordPost"];
 
