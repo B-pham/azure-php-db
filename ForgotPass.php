@@ -35,8 +35,8 @@
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';//Server emails are sent from
                 $mail->SMTPAuth = true;
-                $mail->Username = 'dummykvr02@gmail.com';//Email address that sends the email
-                    $mail->Password = 'ecqdsgylvdbgyjfu';//App password for the gmail account
+                $mail->Username = 'kvrtesting02@gmail.com';//Email address that sends the email
+                    $mail->Password = 'wazngfpibmkeroch';//App password for the gmail account
                 $mail->SMTPSecure = 'tls';
                 $mail->SMTPOptions = array('ssl' => array(//Needed to connect to server, however this in of itself is a security flaw
                                                             'verify_peer'=>false,
@@ -45,12 +45,12 @@
                                                         )
                                           );
                 $mail->Port = 587;
-                $mail->setFrom('dummykvr02@gmail.com');
+                $mail->setFrom('kvrtesting02@gmail.com');
                 $mail->addAddress($to);
                 $mail->isHTML(true);
                 $mail->Subject = $subject;
                 //$to = $result['Email'];
-                $message = "This email came from an azure web application";
+                $message = "This email came from an azure web application!";
                 $mail->Body = $message;
                 $mail->send();
                 print ("Email sent!!!");
