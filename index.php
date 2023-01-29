@@ -12,26 +12,29 @@
     }
     if($_POST["email"] == true)
     {EmailTesting();}
-    $email = $_POST["emailPost"];
-    $password = $_POST["passwordPost"];
+    else
+    {
+        $email = $_POST["emailPost"];
+        $password = $_POST["passwordPost"];
 
-    try {
-        $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
-        $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
-        $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
-        //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        if($email != $loginResult['email']){
-            print("Could not find an account for email. Please try again.");
-        } else if($password == $loginResult['password']){//Check array against entered info
-            print("Password is correct!");
-        } else
-            print("Password is incorrect. Please try again with another email or password.");
-    }
+        try {
+            $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
+            $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
+            $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
+            //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            if($email != $loginResult['email']){
+                print("Could not find an account for email. Please try again.");
+            } else if($password == $loginResult['password']){//Check array against entered info
+                print("Password is correct!");
+            } else
+                print("Password is incorrect. Please try again with another email or password.");
+        }
 
-    catch(PDOException $e){
-        print("Error finding username in database.");
-        die(print_r($e));
+        catch(PDOException $e){
+            print("Error finding username in database.");
+            die(print_r($e));
+        }
     }
 
     /*$sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
