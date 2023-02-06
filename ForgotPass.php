@@ -20,8 +20,8 @@
     }
 
     //$email = $_POST["emailPost"];
-    //function EmailTesting()
-    //{
+    function EmailTesting()
+    {
         try
         {
             $temp = $_POST['email'];
@@ -77,7 +77,7 @@
             print ("Error in processing request:");
             die(print_r($e));
         }
-    //}
+    }
 
 
     //Corrosponding C# code
