@@ -11,6 +11,8 @@
         die(print_r($e));
     }
     if($_POST["email"] == true)
+    $resetEmail = $_POST["email"];
+    print($resetEmail);
     {EmailTesting();}
     else
     {
