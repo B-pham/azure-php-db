@@ -10,10 +10,11 @@
         print("Error connecting to SQL Server.");
         die(print_r($e));
     }
-    if($_POST["email"] == true)
-    $resetEmail = $_POST["email"];
-    print($resetEmail);
-    {EmailTesting();}
+    if($_POST["email"] == true){
+        $resetEmail = $_POST["email"];
+        print($resetEmail);
+        {EmailTesting();}
+    }
     else
     {
         $email = $_POST["emailPost"];
