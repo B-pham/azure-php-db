@@ -112,7 +112,7 @@
                 $message = "This is your password reset email!";
                 $mail->Body = $message;
                 $mail->send();
-                print ("Email sent to $to");
+                print ("Password reset link sent to: $to");
 
 
                 /*$sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
