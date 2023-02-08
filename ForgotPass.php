@@ -87,7 +87,7 @@
             $to = $temp; //substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
             //(Extra characters were consistenly 'a??' for some reason)
             //$subject = "Password Recovery for KVR";
-            $subject = "Your password reset email from KonnectVR";
+            $subject = "Password reset email from KonnectVR";
             if($to != null)
             {
                 $mail = new PHPMailer(true);
