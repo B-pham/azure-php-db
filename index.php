@@ -10,10 +10,7 @@
         print("Error connecting to SQL Server.");
         die(print_r($e));
     }
-    if($_POST["email"] == true)
-    {EmailTesting();}
-    else
-    {
+
         $email = $_POST["emailPost"];
         $password = $_POST["passwordPost"];
 
@@ -35,7 +32,6 @@
             print("Error finding username in database.");
             die(print_r($e));
         }
-    }
 
     /*$sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
 
