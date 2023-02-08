@@ -13,7 +13,7 @@
     if($_POST["email"] == true){
         $resetEmail = $_POST["email"];
         print($resetEmail);
-        {EmailTesting();}
+        EmailTesting();
     }
     else
     {
