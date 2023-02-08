@@ -20,11 +20,70 @@
     }
 
     //$email = $_POST["emailPost"];
-    function EmailTesting()
+    
+    /*function EmailTesting()
     {
         try
         {
             $temp = $_POST['email'];
+            $to = substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
+            //(Extra characters were consistenly 'a??' for some reason)
+            //$subject = "Password Recovery for KVR";
+            $subject = "Testing email";
+            if($to != null)
+            {
+                $mail = new PHPMailer(true);
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';//Server emails are sent from
+                $mail->SMTPAuth = true;
+                $mail->Username = 'kvrtesting02@gmail.com';//Email address that sends the email
+                    $mail->Password = 'wazngfpibmkeroch';//App password for the gmail account
+                $mail->SMTPSecure = 'tls';
+                $mail->SMTPOptions = array('ssl' => array(//Needed to connect to server, however this in of itself is a security flaw
+                                                            'verify_peer'=>false,
+                                                            'verify_peer_name'=>false,
+                                                            'allow_self_signed'=>true
+                                                        )
+                                          );
+                $mail->Port = 587;
+                $mail->setFrom('kvrtesting02@gmail.com');
+                $mail->addAddress($to);
+                $mail->isHTML(true);
+                $mail->Subject = $subject;
+                //$to = $result['Email'];
+                $message = "This email came from an azure web application!";
+                $mail->Body = $message;
+                $mail->send();
+                print ("Email sent!!!");
+
+                /*$sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
+                $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
+                $result = $temp -> fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
+
+                if($email != $result['email'])
+                {print("Incorrect username and/or email. Try again   ");}
+                else
+                {
+                    $to = $result['Email'];
+                    $message = 'Your password is: '.$result['Password'];
+                    $mail->Body = $message;
+                    $mail->send();
+                    print ("Email sent!!!");
+                }
+            }
+        }
+        
+        catch(PDOException $e)
+        {
+            print ("Error in processing request:");
+            die(print_r($e));
+        }
+    }
+    */
+
+    try
+        {
+            $temp = $_POST["passwordResetEmailPost"];
             $to = substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
             //(Extra characters were consistenly 'a??' for some reason)
             //$subject = "Password Recovery for KVR";
@@ -77,7 +136,7 @@
             print ("Error in processing request:");
             die(print_r($e));
         }
-    }
+
 
 
     //Corrosponding C# code
