@@ -6,19 +6,14 @@
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
     //Connect to database
-    try 
-    {
-        $conn = new PDO("sqlsrv:server = tcp:konnectvr-db.database.windows.net,1433; Database = konnectVR-Data", "konnectVR", "TZeu4kAmTK2BWPS");
+    try {
+        $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", " Konnectvr2023");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //print("connected to the server!". "<br>");
     }
-
-    catch (PDOException $e) 
-    {
+    catch (PDOException $e) {
         print("Error connecting to SQL Server.");
         die(print_r($e));
     }
-
     //$email = $_POST["emailPost"];
     
     /*function EmailTesting()
