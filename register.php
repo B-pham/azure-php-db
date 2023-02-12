@@ -28,7 +28,7 @@
 
     catch(PDOException $e){
         print("Error adding user to database.");
-        print(".$e. \n .$encrypted.");
+        print(".$e. \n");
         die();
     }
 ?>
