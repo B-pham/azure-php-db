@@ -15,7 +15,7 @@
     $email = $_POST["emailPost"];
     
     $password = $_POST["passwordPost"];
-    $encrypted = password_hash($password, PASSWORD_DEFAULT);
+    $encrypted = password_hash($password, PASSWORD_BCRYPT);
 
     $accessCode = $_POST["accessCodePost"];
 
