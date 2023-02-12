@@ -22,7 +22,7 @@
     
             if($email != $loginResult['email']){
                 print("Could not find an account for email. Please try again.");
-            } else if($password == $loginResult['password']){//Check array against entered info
+            } else if(password_verify($password, $loginResult['password'])){//Check array against entered info
                 print("Password is correct!");
             } else
                 print("Password is incorrect. Please try again with another email or password.");

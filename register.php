@@ -13,12 +13,15 @@
 
     //Insert Data into Database
     $email = $_POST["emailPost"];
+    
     $password = $_POST["passwordPost"];
+    $encrypted = password_hash($password, PASSWORD_DEFAULT);
+
     $accessCode = $_POST["accessCodePost"];
 
     try {
         $sql = "INSERT INTO loginData (email, password, accessCode)
-            Values('".$email."', '".$password."', '".$accessCode."')";
+            Values('".$email."', '".$encrypted."', '".$accessCode."')";
         $conn -> query($sql);
         echo "Success adding user to database!";
     }
