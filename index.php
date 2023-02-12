@@ -15,7 +15,7 @@
         $password = $_POST["passwordPost"];
 
         try {
-            $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
+            $sql = "SELECT * FROM loginData WHERE email = '".$email."'";
             $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
             $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
             //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
