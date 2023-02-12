@@ -28,6 +28,7 @@
 
     catch(PDOException $e){
         print("Error adding user to database.");
+        print($e);
         die();
     }
 ?>
