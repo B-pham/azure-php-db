@@ -20,8 +20,8 @@
     $accessCode = $_POST["accessCodePost"];
 
     try {
-        $result = $conn ->prepare('INSERT INTO loginData (email, password, accesscode)
-            VALUES((:email), (:password), (:accessCode)');
+        $result = $conn ->prepare("INSERT INTO loginData (email, password, accesscode)
+            VALUES(:email, :password, :accessCode");
         
         $result -> execute(array(
             ':email' => $email,
