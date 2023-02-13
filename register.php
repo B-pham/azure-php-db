@@ -26,7 +26,7 @@
         $result -> execute(array(
             ':email' => $email,
             ':password' => $encrypted,
-            ':accesscode' => $accessCode));
+            ':accessCode' => $accessCode));
 
         /*$sql = "INSERT INTO loginData (email, password, accessCode)
             Values('".$email."', '".$encrypted."', '".$accessCode."')";
