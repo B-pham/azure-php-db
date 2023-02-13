@@ -21,15 +21,13 @@
 
     try {
         $result = $conn ->prepare("INSERT INTO loginData (email, password, accesscode)
-            VALUES(:email, :password, :accessCode)");
+            Values((:email), (:password), (:accessCode))");
         
         $result -> execute(array(
             ':email' => $email,
             ':password' => $encrypted,
             ':accessCode' => $accessCode));
-        while($r = $result ->fetch(PDO::FETCH_ASSOC)){
-            print($r);
-        }
+
         /*$sql = "INSERT INTO loginData (email, password, accessCode)
             Values('".$email."', '".$encrypted."', '".$accessCode."')";
         $conn -> query($sql);*/
