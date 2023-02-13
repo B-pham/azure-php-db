@@ -27,7 +27,9 @@
             ':email' => $email,
             ':password' => $encrypted,
             ':accessCode' => $accessCode));
-
+        while($r = $result ->fetch(PDO::FETCH_ASSOC)){
+            print($r);
+        }
         /*$sql = "INSERT INTO loginData (email, password, accessCode)
             Values('".$email."', '".$encrypted."', '".$accessCode."')";
         $conn -> query($sql);*/
