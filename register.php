@@ -23,10 +23,10 @@
         $result = $conn ->prepare('INSERT INTO loginData (email, password, accesscode)
             VALUES(:email, :password, :accessCode');
         
-        $result -> bindParam(':email',$email);
-        $result -> bindParam(':password',$encrypted);
-        $result -> bindParam(':accessCode',$accessCode);
-        $result -> execute();
+        $result -> execute(array(
+            ':email' => $email,
+            ':password' => $encrypted,
+            ':accesscode' => $accessCode));
 
         /*$sql = "INSERT INTO loginData (email, password, accessCode)
             Values('".$email."', '".$encrypted."', '".$accessCode."')";
