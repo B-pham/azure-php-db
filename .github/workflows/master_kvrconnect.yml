@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'kvrconnect'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F4E5AA209DC9465E89322EFE6B71743A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AED0972FD37344B5892F28F488247A31 }}
           package: .
