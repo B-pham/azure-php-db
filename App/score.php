@@ -6,7 +6,7 @@
     require 'phpmailer/src/Exception.php';
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
-    class ForgotPass
+    class emailScore
     {
         public function DatabaseConnect()
         {
@@ -71,6 +71,7 @@
         }
     }
 
-    $ForgotPass = new ForgotPass();
-    $ForgotPass->SendEmail();
+    $emailScore = new emailScore();
+    $emailScore->SendEmail();
+    print("This is a test text.");
 ?>
