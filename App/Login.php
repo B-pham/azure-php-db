@@ -18,11 +18,11 @@ class Login
         }
     }
 
-    public function LoginCheck()
+    public function LoginCheck($email,$password)
     {
         $this->DatabaseConnect();
-        $email = $_POST["emailPost"];
-        $password = $_POST["passwordPost"];
+        //$email = $_POST["emailPost"];
+        //$password = $_POST["passwordPost"];
 
         try {
             $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
@@ -49,8 +49,8 @@ class Login
     }
 }
 
-$Login = new Login();
-$Login->LoginCheck();
+//$Login = new Login();
+//$Login->LoginCheck();
     /*$sql = "SELECT Password FROM login Where Username = '". $loginUser . "'";
 
     $result = $conn->query($sql);
