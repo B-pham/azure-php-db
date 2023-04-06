@@ -49,7 +49,7 @@ public class DatabaseConnect : MonoBehaviour
         form.AddField("email", email);
         form.AddField("message", message);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("https://kvrdbconnection.azurewebsites.net/ForgotPass.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://kvrdbconnection.azurewebsites.net/app/ForgotPass.php", form))
         {
             yield return www.SendWebRequest();
 
