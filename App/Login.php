@@ -1,6 +1,5 @@
 <?php
 namespace App;
-use PDO;
 //include 'ForgotPass.php';
 
 class Login
