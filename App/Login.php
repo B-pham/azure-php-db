@@ -3,7 +3,8 @@ namespace App;
 //include 'ForgotPass.php';
 
 class Login
-{
+{   
+
     function DatabaseConnect() 
     {
         // PHP Data Objects(PDO) Sample Code:
@@ -32,11 +33,11 @@ class Login
             $stored = $loginResult['password'];
             
             if($email != $loginResult['email']){
-                print("Could not find an account for email. Please try again.");
+                return("Could not find an account for email. Please try again.");
             } else if(password_verify($password, $stored)){//Check array against entered info
-                print("Password is correct!");
+                return("Password is correct!");
             } else{
-                print("Password is incorrect. Please try again with another email or password. \n");
+                return("Password is incorrect. Please try again with another email or password. \n");
                 //print(".$stored. , .$password.");
             }
                 
