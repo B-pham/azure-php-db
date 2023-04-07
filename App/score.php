@@ -21,15 +21,15 @@
             }
         }
 
-        public function SendEmail()
+        public function SendEmail($temp, $test, $user, $score)
         {
             $this->DatabaseConnect();
             try
             {
-                $temp = $_POST["professorEmailPost"];
-                $test = $_POST["testNamePost"];
-                $user = $_POST["userNamePost"];
-                $score = $_POST["testScorePost"];
+                //$temp = $_POST["professorEmailPost"];
+                //$test = $_POST["testNamePost"];
+                //$user = $_POST["userNamePost"];
+                //$score = $_POST["testScorePost"];
                 //$verificationCode = $_POST["verificationCodePost"];
                 $to = $temp; //substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
                 $subject = ".$test. score from .$user.";
@@ -71,7 +71,7 @@
         }
     }
 
-    $emailScore = new emailScore();
-    $emailScore->SendEmail();
-    print("This is a test text.");
+    //$emailScore = new emailScore();
+    //$emailScore->SendEmail();
+    //print("This is a test text.");
 ?>
