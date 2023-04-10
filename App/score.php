@@ -8,7 +8,7 @@
     require 'phpmailer/src/SMTP.php';
     class emailScore
     {
-        public function DatabaseConnect()
+        /*public function DatabaseConnect()
         {
             //Connect to database
             try {
@@ -19,7 +19,7 @@
                 print("Error connecting to SQL Server.");
                 die(print_r($e));
             }
-        }
+        }*/
 
         public function SendEmail($temp, $test, $user, $score)
         {
