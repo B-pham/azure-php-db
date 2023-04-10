@@ -1,7 +1,6 @@
 <?php
-    namespace app;
+    namespace App;
     
-
     $email = $_POST["emailPOST"];
     $password = $_POST["passwordPOST"];
 
