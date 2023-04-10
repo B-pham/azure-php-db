@@ -23,7 +23,7 @@
 
         public function SendEmail($temp, $test, $user, $score)
         {
-            $this->DatabaseConnect();
+            //$this->DatabaseConnect();
             try
             {
                 //$temp = $_POST["professorEmailPost"];
