@@ -6,10 +6,10 @@
     require 'phpmailer/src/Exception.php';
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
-    //class ForgotPass
-    //{
-        //public function DatabaseConnect()
-        //{
+    class ForgotPass
+    {
+        public function DatabaseConnect()
+        {
             //Connect to database
             try {
                 $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", "Konnectvr2023");
@@ -19,11 +19,11 @@
                 print("Error connecting to SQL Server.");
                 die(print_r($e));
             }
-        //}
+        }
 
-        //public function SendEmail()
-        //{
-        //    $this->DatabaseConnect();
+        public function SendEmail()
+        {
+            $this->DatabaseConnect();
             try
             {
                 $temp = $_POST["passwordResetEmailPost"];
@@ -66,8 +66,8 @@
                 print ("Error in processing request:");
                 die(print_r($e));
             }
-        //}
-    //}
+        }
+    }
 
 //    $ForgotPass = new ForgotPass();
 //    $ForgotPass->SendEmail();
