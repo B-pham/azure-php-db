@@ -1,5 +1,6 @@
 <?php
     namespace app;
+    require '/home/site/wwwroot/app/score.php';
 
     $email = $_POST["professorEmailPost"];
     $test = $_POST["testNamePost"];
