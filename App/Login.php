@@ -5,7 +5,7 @@
     class Login
     {   
 
-        function DatabaseConnect() 
+        public function DatabaseConnect() 
         {
             // PHP Data Objects(PDO) Sample Code:
             try {
