@@ -58,7 +58,7 @@
                                 This is an automated message, please do not reply.";
                     $mail->Body = $message;
                     $mail->send();
-                    print ("Password reset link sent to: $to");
+                    print ("Email sent to: $to");
                     $test = true;
                 }
             }

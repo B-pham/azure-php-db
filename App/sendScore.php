@@ -6,11 +6,11 @@
     $user = $_POST["userNamePost"];
     $score = $_POST["testScorePost"];
 
-    print("This is a test text.");
+    //print("This is a test text.");
     try{
         $emailScore = new emailScore();
         $emailScore -> SendEmail($email, $test, $user, $score);
-    }catch(PDOException $e){
+    }catch(Exception $e){
         print("Error sending email.");
         die(print_r($e));
     }
