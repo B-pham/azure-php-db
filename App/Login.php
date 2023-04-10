@@ -5,7 +5,7 @@
     class Login
     {   
 
-        function DatabaseConnect() 
+        public function DatabaseConnect() 
         {
             // PHP Data Objects(PDO) Sample Code:
             try {
@@ -19,7 +19,7 @@
             }
         }
 
-        public function LoginCheck($email,$password)
+        public function LoginCheck($email, $password)
         {
             $this->DatabaseConnect();
             //$email = $_POST["emailPost"];

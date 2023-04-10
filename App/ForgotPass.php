@@ -69,6 +69,6 @@
         }
     }
 
-    $ForgotPass = new ForgotPass();
-    $ForgotPass->SendEmail();
+//    $ForgotPass = new ForgotPass();
+//    $ForgotPass->SendEmail();
 ?>
