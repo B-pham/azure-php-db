@@ -2,9 +2,9 @@
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
-    require 'phpmailer/src/Exception.php';
-    require 'phpmailer/src/PHPMailer.php';
-    require 'phpmailer/src/SMTP.php';
+    require 'app/phpmailer/src/Exception.php';
+    require 'app/phpmailer/src/PHPMailer.php';
+    require 'app/phpmailer/src/SMTP.php';
     //Connect to database
     try 
     {
