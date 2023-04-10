@@ -19,7 +19,7 @@
             }
         }
 
-        public function LoginCheck($email,$password)
+        public function LoginCheck($email, $password)
         {
             $this->DatabaseConnect();
             //$email = $_POST["emailPost"];
