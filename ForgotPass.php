@@ -24,7 +24,6 @@
             $temp = $_POST["passwordResetEmailPost"];
             //$verificationCode = $_POST["verificationCodePost"];
             $to = $temp; //substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
-            print($to);
             //(Extra characters were consistenly 'a??' for some reason)
             //$subject = "Password Recovery for KVR";
             $subject = "Password reset email from KonnectVR";
@@ -49,7 +48,7 @@
                 $mail->isHTML(true);
                 $mail->Subject = $subject;
                 //$to = $result['Email'];
-                $message = "This is your password reset email. <br/> Follow the link: https://kvrdbconnection.azurewebsites.net/resetPassword.php";
+                $message = "This is your password reset email. <br/> Follow the link: https://kvrconnect.azurewebsites.net/app/resetPassword.php";
                 $mail->Body = $message;
                 $mail->send();
                 print ("Password reset link sent to: $to");
