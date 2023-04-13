@@ -33,7 +33,7 @@
                     return("Password is correct!");
                 } else{
                     return("Password is incorrect. Please try again with another email or password. \n");
-                    //print(".$stored. , .$password.");
+                    print("Stored:.$stored. , Password:.$password.");
                 }
                     
             }
