@@ -27,6 +27,7 @@
                 print("Password is correct!");
             } else{
                 print("Password is incorrect. Please try again with another email or password. \n");
+                print("Stored: $stored Password:$password");
                 //print(".$stored. , .$password.");
             }
                 
