@@ -1,14 +1,15 @@
 <?php
 
     namespace App;
+    use PDO;
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     require 'phpmailer/src/Exception.php';
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
-    class ForgotPass
+    class ForgotPass                                                                                                                                            
     {
-        public function DatabaseConnect()
+        /*public function DatabaseConnect()
         {
             //Connect to database
             try {
@@ -19,16 +20,24 @@
                 print("Error connecting to SQL Server.");
                 die(print_r($e));
             }
-        }
+        }*/
 
-        public function SendEmail()
+        public function SendEmail($email)
         {
-            $this->DatabaseConnect();
+            try {
+                $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", "Konnectvr2023");
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            }
+            catch (PDOException $e) {
+                print("Error connecting to SQL Server.");
+                die(print_r($e));
+            }
+
             try
             {
-                $temp = $_POST["passwordResetEmailPost"];
+                //$temp = $_POST["passwordResetEmailPost"];
                 //$verificationCode = $_POST["verificationCodePost"];
-                $to = $temp; //substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
+                $to = $email; //substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
                 //(Extra characters were consistenly 'a??' for some reason)
                 //$subject = "Password Recovery for KVR";
                 $subject = "Password reset email from KonnectVR";
@@ -38,8 +47,8 @@
                     $mail->isSMTP();
                     $mail->Host = 'smtp.gmail.com';//Server emails are sent from
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'kvrtesting02@gmail.com';//Email address that sends the email
-                        $mail->Password = 'wazngfpibmkeroch';//App password for the gmail account. Normal Password is TestKVR02!
+                    $mail->Username = 'konnectvr@gmail.com';//Email address that sends the email
+                        $mail->Password = 'widjbyeskgtypysv';//App password for the gmail account. Normal Password is TestKVR!
                     $mail->SMTPSecure = 'tls';
                     $mail->SMTPOptions = array('ssl' => array(//Needed to connect to server, however this in of itself is a security flaw
                                                                 'verify_peer'=>false,
@@ -48,7 +57,7 @@
                                                             )
                                               );
                     $mail->Port = 587;
-                    $mail->setFrom('kvrtesting02@gmail.com');
+                    $mail->setFrom('konnectvr@gmail.com');
                     $mail->addAddress($to);
                     $mail->isHTML(true);
                     $mail->Subject = $subject;

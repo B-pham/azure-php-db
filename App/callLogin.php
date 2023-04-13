@@ -5,7 +5,6 @@
     $email = $_POST["emailPost"];
     $password = $_POST["passwordPost"];
 
-    
     try{
         $login = new Login();
         $loginMessage = $login -> LoginCheck($email, $password);
