@@ -32,7 +32,7 @@
                 } else if(password_verify($password, $stored)){//Check array against entered info
                     return("Password is correct!");
                 } else{
-                    return("Password is incorrect. Please try again with another email or password. <br/> Stored: $store Password:$password");
+                    return("Password is incorrect. Please try again with another email or password. <br/> Stored: $stored Password:$password");
                     //print(".$stored. , .$password.");
                 }
                     
