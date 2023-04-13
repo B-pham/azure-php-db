@@ -61,7 +61,7 @@
                     $mail->isHTML(true);
                     $mail->Subject = $subject;
                     //$to = $result['Email'];
-                    $message = "This is your password reset email. <br/> Follow the link: https://kvrdbconnection.azurewebsites.net/app/resetPassword.php";
+                    $message = "This is your password reset email. <br/> Follow the link: https://kvrconnect.azurewebsites.net/app/resetPassword.php";
                     $mail->Body = $message;
                     $mail->send();
                     print ("Password reset link sent to: $to");
