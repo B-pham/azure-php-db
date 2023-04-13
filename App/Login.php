@@ -7,6 +7,7 @@
     {   
         public function LoginCheck($email, $password)
         {
+            return("email: $email Password: $password");
             try {
                 $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", "Konnectvr2023");
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
