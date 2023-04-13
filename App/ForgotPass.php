@@ -1,5 +1,4 @@
 <?php
-
     namespace App;
     use PDO;
     use PHPMailer\PHPMailer\PHPMailer;
@@ -77,7 +76,4 @@
             }
         }
     }
-
-//    $ForgotPass = new ForgotPass();
-//    $ForgotPass->SendEmail();
 ?>
