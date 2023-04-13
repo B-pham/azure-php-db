@@ -26,6 +26,7 @@
                 $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
                 //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $stored = $loginResult['password'];
+                return("Stored: $stored Password:$password");
                 
                 if($email != $loginResult['email']){
                     return("Could not find an account for email. Please try again.");
