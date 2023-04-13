@@ -7,7 +7,6 @@
     {   
         public function LoginCheck($email, $password)
         {
-            return("email: $email Password: $password");
             try {
                 $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", "Konnectvr2023");
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -27,14 +26,14 @@
                 $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
                 //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $stored = $loginResult['password'];
-                return("Stored: $stored Password:$password");
                 
                 if($email != $loginResult['email']){
                     return("Could not find an account for email. Please try again.");
                 } else if(password_verify($password, $stored)){//Check array against entered info
                     return("Password is correct!");
                 } else{
-                    return("Password is incorrect. Please try again with another email or password. \n Stored: $stored Password:$password");
+                    return("Password is incorrect. Please try again with another email or password. \n");
+                    return("Stored: $store Password:$password");
                     //print(".$stored. , .$password.");
                 }
                     

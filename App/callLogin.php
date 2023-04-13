@@ -2,8 +2,8 @@
     namespace App;
     require '/home/site/wwwroot/app/Login.php';
     
-    $email = $_POST["emailPOST"];
-    $password = $_POST["passwordPOST"];
+    $email = $_POST["emailPost"];
+    $password = $_POST["passwordPost"];
 
     
     try{
