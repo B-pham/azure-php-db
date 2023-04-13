@@ -1,5 +1,5 @@
 <?php
-    include '/App/ForgotPass.php';
+    //include '/App/ForgotPass.php';
     // PHP Data Objects(PDO) Sample Code:
     try {
         $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", "Konnectvr2023");
