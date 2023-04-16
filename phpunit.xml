@@ -2,10 +2,11 @@
 <phpunit bootstrap="vendor/autoload.php"
     colors="true"
     stopOnFailure="false">
+    <!--colors var sets up so there the results of test are green or red, while stopOnFailure tells PHPUnit to keep going if a test fails-->
 
     <testsuites>
         <testsuite name="Login">
-            <directory>Test</directory>
+            <directory>Test</directory><!--This tells the PHPUnit the name of the php file to go to for unit test. In this case, the file is called Test.php-->
         </testsuite>
     </testsuites>
 </phpunit>
