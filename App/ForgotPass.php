@@ -63,6 +63,7 @@
                     //$to = $result['Email'];
                     $message = "This is your password reset email. <br/> Follow the link: https://kvrconnect.azurewebsites.net/app/resetPassword.php";
                     $mail->Body = $message;
+                    $email->SMTPDebug = true;
                     $mail->send();//Yeet that email
                     print ("Password reset link sent to: $to");
                     $test = true;//This is here for unit testing to make sure emails can be sent
