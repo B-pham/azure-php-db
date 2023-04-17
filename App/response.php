@@ -23,6 +23,7 @@
         <p>
         <?php
             echo $_SESSION['Cpass']; 
+            echo $_SESSION['email'];
             echo "<br><br> This is an obivous security flaw. Will not exist in final release.";
         ?>
         </p>
