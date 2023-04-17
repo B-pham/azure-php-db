@@ -46,8 +46,8 @@
                     $mail->isSMTP();//What protocol the email uses
                     $mail->Host = 'smtp.gmail.com';//Server emails are sent from
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'konnectvr@gmail.com';//Email address that sends the email
-                        $mail->Password = 'zxfwklqgrhznwian';//App password for the gmail account. Normal Password is TestKVR!
+                    $mail->Username = 'konnectvr1@gmail.com';//Email address that sends the email
+                        $mail->Password = 'TestKVR!';//App password for the gmail account. Normal Password is TestKVR!
                     $mail->SMTPSecure = 'tls';//SMTP protocol used
                     $mail->SMTPOptions = array('ssl' => array(//Needed to connect to server, however this in of itself is a security flaw
                                                                 'verify_peer'=>false,
@@ -56,7 +56,7 @@
                                                             )
                                               );
                     $mail->Port = 587;//Port email is sent through. This needs to change based on SMTPSecure value
-                    $mail->From = 'konnectvr@gmail.com';
+                    $mail->setFrom('konnectvr1@gmail.com');
                     $mail->addAddress($to);
                     $mail->isHTML(true);//How to format the email for the user to see
                     $mail->Subject = $subject;
