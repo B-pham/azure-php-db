@@ -12,7 +12,7 @@
     if(isset($_SESSION['Cpass']))
     {
         $encrypted = password_hash($_SESSION['Cpass'], PASSWORD_BCRYPT);
-        $sql = "UPDATE `logintest` SET `Password`='". $encrypted ."' WHERE `Email` = '". $_SESSION['email'] ."'"; 
+        $sql = "UPDATE loginData SET password = '". $encrypted ."' WHERE email = '". $_SESSION['email'] ."'";
         $conn -> query($sql);
     }
 
