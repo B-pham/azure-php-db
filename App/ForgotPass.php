@@ -47,7 +47,7 @@
                     $mail->Host = 'smtp.gmail.com';//Server emails are sent from
                     $mail->SMTPAuth = true;
                     $mail->Username = 'konnectvr1@gmail.com';//Email address that sends the email
-                        $mail->Password = 'TestKVR!';//App password for the gmail account. Normal Password is TestKVR!
+                        $mail->Password = 'imtrdtkmzazbircy';//App password for the gmail account. Normal Password is TestKVR!
                     $mail->SMTPSecure = 'tls';//SMTP protocol used
                     $mail->SMTPOptions = array('ssl' => array(//Needed to connect to server, however this in of itself is a security flaw
                                                                 'verify_peer'=>false,
