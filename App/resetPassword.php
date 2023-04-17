@@ -36,13 +36,17 @@
 
     if(isset($_POST["CPass"]))
     {
+        $email = $_POST["email"];
         $CPass = $_POST["CPass"];
         $NPass = $_POST["NPass"];
     
         if(strcmp($CPass, $NPass) != 0)
         {echo "<b>Passwords are not the same. Try again.</b><br><br>";}
         else
-        {$_SESSION['Cpass'] = $CPass; header('Location: https://kvrconnect.azurewebsites.net/app/response.php'); exit();}
+        {
+        $_SESSION['Cpass'] = $CPass; 
+        $_SESSION['email'] = $email;
+        header('Location: https://kvrconnect.azurewebsites.net/app/response.php'); exit();}
     }
 
 ?>
