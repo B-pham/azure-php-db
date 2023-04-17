@@ -56,14 +56,13 @@
                                                             )
                                               );
                     $mail->Port = 587;//Port email is sent through. This needs to change based on SMTPSecure value
-                    $mail->setFrom('konnectvr@gmail.com');
+                    $mail->From = 'konnectvr@gmail.com';
                     $mail->addAddress($to);
                     $mail->isHTML(true);//How to format the email for the user to see
                     $mail->Subject = $subject;
                     //$to = $result['Email'];
                     $message = "This is your password reset email. <br/> Follow the link: https://kvrconnect.azurewebsites.net/app/resetPassword.php";
                     $mail->Body = $message;
-                    $email->SMTPDebug = true;
                     $mail->send();//Yeet that email
                     print ("Password reset link sent to: $to");
                     $test = true;//This is here for unit testing to make sure emails can be sent
