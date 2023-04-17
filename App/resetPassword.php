@@ -42,7 +42,7 @@
         if(strcmp($CPass, $NPass) != 0)
         {echo "<b>Passwords are not the same. Try again.</b><br><br>";}
         else
-        {$_SESSION['Cpass'] = $CPass; header('Location: https://kvrdbconnection.azurewebsites.net/response.php'); exit();}
+        {$_SESSION['Cpass'] = $CPass; header('Location: https://kvrconnect.azurewebsites.net/app/resetpassword.php'); exit();}
     }
 
 ?>
