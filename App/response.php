@@ -22,7 +22,7 @@
         <h1>Password updated!!</h1>
         <p>
         <?php
-            print("Password for $_SESSION['email'] has been changed!")
+            print("Password for '". $_SESSION['email'] ."' has been changed!")
         ?>
         </p>
     </body>
