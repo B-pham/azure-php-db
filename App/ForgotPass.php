@@ -21,7 +21,7 @@
             }
         }*/
 
-        public function SendEmail($email)
+        public function SendEmail($email, $verificationCode)
         {
             try {//Connect to database
                 $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", "Konnectvr2023");
@@ -63,7 +63,8 @@
                     $mail->isHTML(true);//How to format the email for the user to see
                     $mail->Subject = $subject;
                     //$to = $result['Email'];
-                    $message = "This is your password reset email. <br/> Follow the link: https://kvrconnect.azurewebsites.net/app/resetPassword.php";
+                    ///$message = "This is your password reset email. <br/> Follow the link: https://kvrconnect.azurewebsites.net/app/resetPassword.php";
+                    $message = "This is your verification code: $verificationCode";
                     $mail->Body = $message;
                     $mail->send();//Yeet that email
                     print ("Password reset link sent to: $to");

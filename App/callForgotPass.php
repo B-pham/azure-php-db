@@ -3,10 +3,11 @@
     require '/home/site/wwwroot/app/ForgotPass.php';
     
     $email = $_POST["passwordResetEmailPost"];
+    $verificationCode = $_POST["verificationCodePost"];
     
     try{
         $forgotPass = new ForgotPass();
-        $forgotPass -> SendEmail($email);
+        $forgotPass -> SendEmail($email, $verificationCode);
 
     }catch(Exception $e){
         print("Error sending email.");
