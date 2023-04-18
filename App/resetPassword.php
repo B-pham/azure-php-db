@@ -32,7 +32,7 @@
             die(print_r($e));
         }
     */
-    session_start();
+    /*session_start();
 
     if(isset($_POST["CPass"]))
     {
@@ -47,6 +47,26 @@
         $_SESSION['Cpass'] = $CPass; 
         $_SESSION['email'] = $email;
         header('Location: https://kvrconnect.azurewebsites.net/app/response.php'); exit();}
+    }*/
+
+    $email = $_POST["passwordResetEmailPost"];
+    $confirmedNewPassword = $_POST["confirmedNewPasswordPost"];
+
+    try {
+        $conn = new PDO("sqlsrv:server = tcp:konnectvr.database.windows.net,1433; Database = KVR_Database", "CloudSAf20f247f", "Konnectvr2023");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //print("connected to the server!". "<br>");
+    }
+    catch (PDOException $e) {
+        print("Error connecting to SQL Server.");
+        die(print_r($e));
+    }
+
+    if(isset($confirmedNewPassword))
+    {
+        $encrypted = password_hash($confirmedNewPassword, PASSWORD_BCRYPT);
+        $sql = "UPDATE loginData SET password = '". $encrypted ."' WHERE email = '". $email ."'";
+        $conn -> query($sql);
     }
 
 ?>
