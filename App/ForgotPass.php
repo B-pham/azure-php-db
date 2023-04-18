@@ -32,6 +32,21 @@
                 die(print_r($e));
             }
 
+            try {
+                $sql = "SELECT * FROM loginData WHERE email = '". $email ."'";
+                $temp = $conn -> query($sql);//Grab inforamtion based on above query statement
+                $loginResult = $temp->fetch(PDO::FETCH_ASSOC);//Sort rows into arrays
+                //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                if($email != $loginResult['email']){
+                    return("Could not find an account for email. Please try again.");
+                    
+            }
+
+            catch(PDOException $e){
+                print("Error finding username in database.");
+                die(print_r($e));
+            }
+
             try
             {
                 //$temp = $_POST["passwordResetEmailPost"];
