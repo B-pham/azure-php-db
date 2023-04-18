@@ -71,7 +71,7 @@
 
 ?>
 
-<html>
+<!--<html>
 
     <form action="ResetPassword.php" method="post">
         <label for="email">Email:</label><br>
@@ -84,4 +84,4 @@
     </form>
 
 
-</html>
+</html>-->
