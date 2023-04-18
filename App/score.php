@@ -31,7 +31,7 @@
                 //$score = $_POST["testScorePost"];
                 //$verificationCode = $_POST["verificationCodePost"];
                 $to = $temp; //substr($temp, 0, -3);//Have found that there are three extra characters when sending emails at end of string via POST. This removes those characters
-                $subject = ".$test. score from .$user.";
+                $subject = "$test score from $user";
                 if($to != null)
                 {
                     $mail = new PHPMailer(true);
@@ -56,7 +56,7 @@
                     $mail->Subject = $subject;
                     //$to = $result['Email'];
                     $message = " A student has completed the following quiz. <br/><br/> 
-                                Student: $user <br/> Score: $score <br/> Test: $test <br/> <br/>
+                                Student: $user <br/> Score: $score <br/> Test: $test <br/> <br/> <br/>
                                 This is an automated message, please do not reply.";
                     $mail->Body = $message;
                     $mail->send();
