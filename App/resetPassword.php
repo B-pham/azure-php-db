@@ -67,8 +67,9 @@
         $encrypted = password_hash($confirmedNewPassword, PASSWORD_BCRYPT);
         $sql = "UPDATE loginData SET password = '".$encrypted."' WHERE email = '".$email."'";
         $conn -> query($sql);
-        print($encrypted);
-        print($email);
+        print("Password: $confirmedNewPassword <br>");
+        print("Hashed Password: $encrypted <br>");
+        print("Email: $email <br>");
     }
 
 ?>
