@@ -55,7 +55,7 @@
                     $mail->isHTML(true);
                     $mail->Subject = $subject;
                     //$to = $result['Email'];
-                    $message = " A student has completed the following quiz. <br/><br/> 
+                    $message = " A student has completed the following quiz: <br/><br/> 
                                 Student: $user <br/> Score: $score <br/> Test: $test <br/> <br/> <br/>
                                 This is an automated message, please do not reply.";
                     $mail->Body = $message;
