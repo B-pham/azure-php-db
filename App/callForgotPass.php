@@ -7,8 +7,9 @@
     
     try{
         $forgotPass = new ForgotPass();
-        $forgotPass -> SendEmail($email, $verificationCode);
-
+        $forgotPassMessage = $forgotPass -> SendEmail($email, $verificationCode);
+        print($forgotPassMessage);
+        
     }catch(Exception $e){
         print("Error sending email.");
         die(print_r($e));
