@@ -39,7 +39,7 @@
                 //$loginResult-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 if($email != $loginResult['email']){
                     return("Could not find an account for email. Please try again.");
-                    
+                }
             }
 
             catch(PDOException $e){
